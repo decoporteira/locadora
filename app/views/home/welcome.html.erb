@@ -1,28 +1,27 @@
-<h1>Cadastro de Filmes, bem vindo!</h1>
-<h3>Filmes</h3>
-<ul>
-  <li>
-  <%= link_to 'Cadastrar', new_movie_path %>
-  </li>
-  <li>
+<div class="p-5 text-center bg-body-tertiary rounded-3">
+   
+    <h1 class="text-body-emphasis">Cadastro de Filmes</h1>
+    <p class="col-lg-8 mx-auto fs-5 text-muted">
+      <h3>Filmes</h3>
+
+     
+  <%= link_to 'Cadastrar', new_movie_path %> - 
+  
   <%= link_to 'Ver todos', movies_path %>
-  </li>
-</ul>
+ 
 <h3>Generos:</h3>
-<ul>
- <li>
-  <%= link_to 'Cadastrar', new_genre_path %>
-  </li>
-  <li>
+
+  <%= link_to 'Cadastrar', new_genre_path %> - 
+
   <%= link_to 'Ver todos', genres_path %>
-  </li>
-</ul>
+
 <h3>Diretores:</h3>
-<ul>
- <li>
-  <%= link_to 'Cadastrar', new_director_path %>
-  </li>
-  <li>
+
+  <%= link_to 'Cadastrar', new_director_path %>  - 
+ 
   <%= link_to 'Ver todos', directors_path %>
-  </li>
-</ul>
+
+</p>
+    
+  </div>
+

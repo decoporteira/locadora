@@ -1,13 +1,32 @@
   <%= form_for Director.new do |f| %>
-  <%= f.label :name, 'Nome' %>
-  <%= f.text_field :name %>
-  <%= f.label :nationality, 'Nacionalidade' %>
-  <%= f.text_field :nationality %>
-  <%= f.label :date, 'Nascimento' %>
-  <%= f.text_field :date %>
-  <%= f.label :genre, 'Gênero preferido' %>
-   <%=f.collection_select :genre, Genre.all, :id, :name  %>
-  <%= f.submit 'Editar' %>
- 
-  <%= f.submit 'Criar' %>
+  <div class="col-lg-4 m-4">
+    <div>
+      <%= f.label :name, 'Nome', class:"form-label" %>
+    </div>
+    <div>
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+    <div>
+      <%= f.label :nationality, 'Nacionalidade' %>
+    </div>
+    <div>
+      <%= f.text_field :nationality, class:"form-control" %>
+    </div>
+    <div>
+      <%= f.label :date, 'Nascimento', class:"form-label" %>
+    </div>
+    <div>
+      <%= f.text_field :date, class:"form-control" %>
+    </div>
+    <div>
+      <%= f.label :genre, 'Gênero preferido', class:"form-label" %>
+    </div>
+    <div>
+      <%=f.collection_select :genre, Genre.all, :id, :name, class:"form-control" %>
+    </div>
+      
+    <%= f.submit 'Editar', class:"w-30 btn btn-primary mt-4" %>
+  
+    <%= f.submit 'Criar', class:"w-30 btn btn-primary mt-4" %>
+  </div>
 <% end %>

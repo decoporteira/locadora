@@ -1,17 +1,40 @@
   <%= form_for Movie.new do |f| %>
-  <%= f.label :title, 'Título' %>
-  <%= f.text_field :title %>
-  <%= f.label :year, 'Ano de lançamento' %>
-  <%= f.text_field :year %>
-  <%= f.label :country, 'País de origem' %>
-  <%= f.text_field :country %>
-  <%= f.label :plor, 'Sinopse' %>
-  <%= f.text_field :plot %>
-  <%= f.label :genre, 'Gênero' %>
-  <%=f.collection_select :genre, Genre.all, :id, :name  %>
-  <%= f.label :director, 'diretor' %>
-  <%=f.collection_select :director, Director.all, :id, :name  %>
-  <%= f.submit 'Editar' %>
- 
-  <%= f.submit 'Criar' %>
+  <div class="col-lg-4 m-4">
+    <div>
+      <%= f.label :title, 'Título', class:"form-label" %>
+      <%= f.text_field :title, class:"form-control"%>
+    </div>
+    <div>
+       <%= f.label :year, 'Ano de lançamento', class:"form-label" %>
+      <%= f.text_field :year, class:"form-control" %>
+    </div>
+    <div>
+   <%= f.label :country, 'País de origem', class:"form-label" %>
+      <%= f.text_field :country, class:"form-control" %>
+    </div>
+    <div>
+    <%= f.label :plor, 'Sinopse', class:"form-label" %>
+      <%= f.text_field :plot, class:"form-control" %>
+    </div>
+    <div>
+      <%= f.label :genre, 'Gênero', class:"form-label" %>
+      <%=f.collection_select :genre, Genre.all, :id, :name, class:"form-control"  %>
+    </div>
+    <div>
+      <%= f.label :director, 'Diretor', class:"form-label" %>
+      <%=f.collection_select :director, Director.all, :id, :name, class:"form-control"  %>
+    </div>
+     <div>
+      <%= f.label :is_available, 'Disponível', class:"form-label" %>
+       <%= f.select :is_available, options_for_select(Movie.is_availables.map {|key, value| [key.titleize, Movie.is_availables.key(value)]}, @movie.is_available) %>
+    </div>
+    <div>
+      <%= f.label :is_available, 'Disponível', class:"form-label" %>
+      <%= f.file_field :poster, class:"form-control" %>
+    </div>
+   
+      <%= f.submit 'Editar', class:"w-30 btn btn-primary mt-4" %>
+      
+      <%= f.submit 'Criar', class:"w-30 btn btn-primary mt-4" %>
+      </div>
 <% end %>

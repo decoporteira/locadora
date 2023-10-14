@@ -11,7 +11,8 @@ class MoviesController < ApplicationController
   end
 
   def create
-    @movie = Movie.new(title: params[:movie][:title], year: params[:movie][:year], plot: params[:movie][:plot], country: params[:movie][:country], running_time: params[:movie][:running_time], genre_id: params[:movie][:genre], director_id: params[:movie][:director])
+    @movie = Movie.new(title: params[:movie][:title], year: params[:movie][:year], plot: params[:movie][:plot], country: params[:movie][:country], running_time: params[:movie][:running_time], poster: params[:movie][:poster], genre_id: params[:movie][:genre], director_id: params[:movie][:director])
+    p params
     @movie.save
     redirect_to root_path
   end
@@ -22,7 +23,7 @@ class MoviesController < ApplicationController
 
   def update
     @movie = Movie.find(params[:id])
-    @movie.update(params.require(:movie).permit(:title, :year, :plor, :country, :running_time, :is_available, :director_id, :genre_id))
+    @movie.update(params.require(:movie).permit(:title, :year, :plor, :country, :running_time, :is_available, :poster, :director_id, :genre_id))
     redirect_to root_path
   end
 

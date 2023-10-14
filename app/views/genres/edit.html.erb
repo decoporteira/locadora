@@ -1,7 +1,13 @@
 <%= form_for @genre do |f| %>
-  <%= f.label :name, 'Nome' %>
-  <%= f.text_field :name %>
-  <%= f.submit 'Editar' %>
+  <div class="col-lg-4 m-4">
+    <div>
+      <%= f.label :name, 'Nome', class:"form-label" %>
+      <%= f.text_field :name, class:"form-control" %>
+    </div>
+  <%= f.submit 'Editar', class:"w-30 btn btn-primary mt-4" %>
+  </div>
 <% end %>
 <%= button_to "Destroy this classroom" , @task,
-	method: :delete,method: :delete %>
+	method: :delete,method: :delete, class:"w-30 btn btn-danger ms-4" %>
+
+  

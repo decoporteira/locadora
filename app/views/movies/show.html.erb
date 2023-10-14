@@ -1,18 +1,29 @@
-<h1>Diretor: <%= @movie.title%> </h1>
-<% if flash[:notice] %>
-  <div style="margin: 10px 0px">
-    <%= flash[:notice] %>
-  </div>
-  <% end %>
-<dl>
-<dt><strong>Título: </strong><%= @movie.title %></dt>
-<dt><strong>Ano de lançamento: </strong><%= @movie.year %></dt>
-<dt><strong>Sinopse: </strong><%= @movie.plot %></dt>
-<dt><strong>País de origem: </strong><%= @movie.country%></dt>
-<dt><strong>Duração: </strong><%= @movie.running_time%> minutos</dt>
-<dt><strong>Genero: </strong><%= @movie.genre.name%> </dt>
-<dt><strong>Diretor: </strong><%= @movie.director.name %> </dt>
-<dt><strong>Disponibilidade: </strong><%= @movie.is_available %> </dt>
+<div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+  
 
-<%= link_to 'Editar', edit_movie_path %>
-</dl>
+  <div class="col">
+    <div class="card mb-4 rounded-3 shadow-sm">
+        <div class="card-header py-2">
+            <h4 class="my-0 fw-normal"><%= @movie.title %> </h4>
+        </div>
+        <div class="card-body">
+            <% if @movie.poster.representable? %>
+                <%= image_tag(@movie.poster, style:"width:150px") %>
+            <% else %>
+                <p>Sem poster cadastrado</p>
+            <% end %>
+            <br />
+            <br />
+            <strong>Diretor: </strong><%= @movie.director.name %> <br />
+            <strong>Disponibilidade: </strong><%= @movie.is_available %> <br />
+            <strong>Ano de lançamento: </strong><%= @movie.year %>  <br />
+            <%= link_to 'Editar', edit_movie_path(@movie.id) %><br />
+        
+        </div>
+        </div>
+    </div>
+  
+    
+</div>
+
+
