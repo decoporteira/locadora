@@ -1,0 +1,23 @@
+<h1>Gêneros:</h1>
+<ul>
+    <% @genres.each do |genre|%>
+    <li><%= genre.name %> - <%=link_to 'Editar', edit_genre_path(genre)%></li>
+    <% end %>
+</ul>
+<%=link_to 'Novo Gênero', new_genre_path%>
+
+    <h1>Diretores:</h1>
+<ul>
+    <% @directors.each do |director|%>
+    <li><%= director.name %> - <%=link_to 'Editar', edit_director_path(director)%></li>
+    <% end %>
+</ul>
+<%=link_to 'Novo Diretor', new_director_path%>
+
+ <h1>Filmes:</h1>
+<ul>
+    <% @movies.each do |movie|%>
+    <li><%= movie.title %> - <%=link_to 'Editar', edit_movie_path(movie)%></li>
+    <% end %>
+</ul>
+    <%=link_to 'Novo Filme', new_movie_path%>

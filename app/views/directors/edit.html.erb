@@ -1,0 +1,13 @@
+<%= form_for @director do |f| %>
+  <%= f.label :name, 'Nome' %>
+  <%= f.text_field :name %>
+  <%= f.label :nationality, 'Nacionalidade' %>
+  <%= f.text_field :nationality %>
+  <%= f.label :date, 'Nascimento' %>
+  <%= f.text_field :date %>
+  <%= f.label :genre, 'Gênero preferido' %>
+  <%=f.collection_select :genre, Genre.all, :id, :name  %>
+  <%= f.submit 'Editar' %>
+<% end %>
+<%= button_to "Destroy this classroom" , @director,
+	method: :delete,method: :delete %>
