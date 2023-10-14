@@ -1,17 +1,18 @@
 <%= form_for @movie do |f| %>
-  <%= f.label :title, 'Título' %>
-  <%= f.text_field :title %>
-  <%= f.label :year, 'Ano de lançamento' %>
-  <%= f.text_field :year %>
-  <%= f.label :country, 'País de origem' %>
-  <%= f.text_field :country %>
-  <%= f.label :plor, 'Sinopse' %>
-  <%= f.text_field :plot %>
-  <%= f.label :genre, 'Gênero' %>
-  <%=f.collection_select :genre, Genre.all, :id, :name  %>
-  <%= f.label :director, 'diretor' %>
-  <%=f.collection_select :director, Director.all, :id, :name  %>
-  <%= f.submit 'Editar' %>
+    <%= f.label :title, 'Título' %>
+    <%= f.text_field :title %>
+    <%= f.label :year, 'Ano de lançamento' %>
+    <%= f.text_field :year %>
+    <%= f.label :country, 'País de origem' %>
+    <%= f.text_field :country %>
+    <%= f.label :plor, 'Sinopse' %>
+    <%= f.text_field :plot %>
+    <%= f.label :genre, 'Gênero' %>
+    <%=f.collection_select :genre, Genre.all, :id, :name  %>
+    <%= f.label :director, 'diretor' %>
+    <%=f.collection_select :director, Director.all, :id, :name  %>
+    <%= f.label :is_available, 'Disponível' %>
+    <%= f.select :is_available, options_for_select(Movie.is_availables.map {|key, value| [key.titleize, Movie.is_availables.key(value)]}, @movie.is_available) %>
+    <%= f.submit 'Editar' %> 
 <% end %>
-<%= button_to "Destroy this classroom" , @movie,
-	method: :delete,method: :delete %>
+<%= button_to "Destroy this classroom" , @movie, method: :delete,method: :delete %>

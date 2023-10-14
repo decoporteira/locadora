@@ -1,7 +1,9 @@
 <h1>Filmes:</h1>
 
 <% @movies.each do |movie| %>
-<%= movie.title %> <br />
-<%= movie.year %>  <%= link_to '+', movie_path(movie.id) %><br />
-
+    <strong>Título: </strong><%= movie.title %> <br />
+    <strong>Disponibilidade: </strong><%= movie.is_available %> <br />
+    <strong>Ano de lançamento: </strong><%= movie.year %>  <br />
+    <%= link_to 'Ver mais info', movie_path(movie.id) %><br />
+    <br />
 <% end %>

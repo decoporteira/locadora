@@ -12,6 +12,7 @@
 <dt><strong>Duração: </strong><%= @movie.running_time%> minutos</dt>
 <dt><strong>Genero: </strong><%= @movie.genre.name%> </dt>
 <dt><strong>Diretor: </strong><%= @movie.director.name %> </dt>
+<dt><strong>Disponibilidade: </strong><%= @movie.is_available %> </dt>
 
 <%= link_to 'Editar', edit_movie_path %>
 </dl>
