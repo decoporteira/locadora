@@ -1,0 +1,15 @@
+<h1>Gênero: <%= @genre.name%> </h1>
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+<dl>
+<dt><strong>Nome: </strong><%= @genre.name %></dt>
+<%= link_to 'Editar', edit_genre_path %>
+<br />
+<h3><Filmes de <%= @genre.name%> /h3>
+<% @movies.each do |movie| %>
+<%= movie.title %> <br />
+<% end %>
+</dl>

@@ -1,9 +1,13 @@
 class DirectorsController < ApplicationController
     def new
     end
-
+    def index
+      @directors =[]
+      @directors = Director.all
+    end
     def show
       @director = Director.find(params[:id])
+      @movies = Movie.where(director_id: params[:id])
     end
 
     def create

@@ -1,23 +1,28 @@
-<h1>Gêneros:</h1>
+<h1>Cadastro de Filmes, bem vindo!</h1>
+<h3>Filmes</h3>
 <ul>
-    <% @genres.each do |genre|%>
-    <li><%= genre.name %> - <%=link_to 'Editar', edit_genre_path(genre)%></li>
-    <% end %>
+  <li>
+  <%= link_to 'Cadastrar', new_movie_path %>
+  </li>
+  <li>
+  <%= link_to 'Ver todos', movies_path %>
+  </li>
 </ul>
-<%=link_to 'Novo Gênero', new_genre_path%>
-
-    <h1>Diretores:</h1>
+<h3>Generos:</h3>
 <ul>
-    <% @directors.each do |director|%>
-    <li><%= director.name %> - <%=link_to 'Editar', edit_director_path(director)%></li>
-    <% end %>
+ <li>
+  <%= link_to 'Cadastrar', new_genre_path %>
+  </li>
+  <li>
+  <%= link_to 'Ver todos', genres_path %>
+  </li>
 </ul>
-<%=link_to 'Novo Diretor', new_director_path%>
-
- <h1>Filmes:</h1>
+<h3>Diretores:</h3>
 <ul>
-    <% @movies.each do |movie|%>
-    <li><%= movie.title %> - <%=link_to 'Editar', edit_movie_path(movie)%></li>
-    <% end %>
+ <li>
+  <%= link_to 'Cadastrar', new_director_path %>
+  </li>
+  <li>
+  <%= link_to 'Ver todos', directors_path %>
+  </li>
 </ul>
-    <%=link_to 'Novo Filme', new_movie_path%>

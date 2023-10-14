@@ -1,0 +1,18 @@
+<h1>Diretor: <%= @director.name%> </h1>
+<% if flash[:notice] %>
+  <div style="margin: 10px 0px">
+    <%= flash[:notice] %>
+  </div>
+  <% end %>
+<dl>
+<dt><strong>Nome: </strong><%= @director.name %></dt>
+<dt><strong>Nacionalidade: </strong><%= @director.nationality %></dt>
+<dt><strong>Data: </strong><%= @director.date %></dt>
+<dt><strong>Genero Preferido: </strong><%= @director.genre.name%></dt>
+
+<%= link_to 'Editar', edit_director_path %>
+</dl>
+<h3>Filmes de <%= @director.name %> </h3>
+<% @movies.each do |movie| %>
+<%= movie.title %> <br />
+<% end %>
